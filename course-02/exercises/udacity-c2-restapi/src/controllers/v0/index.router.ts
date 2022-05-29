@@ -1,14 +1,15 @@
-import { Router, Request, Response } from 'express';
-import { FeedRouter } from './feed/routes/feed.router';
-import { UserRouter } from './users/routes/user.router';
+import { Router, Response } from "express";
+import { FeedRouter } from "./feed/routes/feed.router";
+import { UserRouter } from "./users/routes/user.router";
 
-const router: Router = Router();
+const router = Router();
 
-router.use('/feed', FeedRouter);
-router.use('/users', UserRouter);
+router.use("/feed", FeedRouter);
+router.use("/users", UserRouter);
 
-router.get('/', async (req: Request, res: Response) => {    
+// [ /api/v0/ ]:
+router.get("/", async (_, res: Response) => {
     res.send(`V0`);
 });
 
-export const IndexRouter: Router = router;
+export { router as IndexRouter };
