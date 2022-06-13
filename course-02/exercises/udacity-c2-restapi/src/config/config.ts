@@ -1,22 +1,22 @@
 export const config = {
-    "dev": {
-        "username": "dbmaster",
-        "password": "EpezQYnTTqGReZXKmuws",
-        "database": "database341921014024",
-        "host": "database341921014024.ctvy1hmkvlpb.us-east-1.rds.amazonaws.com",
-        "dialect": "postgres",
-        "aws_region": "us-east-1",
-        "aws_profile": "default",
-        "aws_media_bucket": "bucket341921014024",
+    dev: {
+        database: process.env.POSTGRES_DATABASE,
+        dialect: "postgres",
+        username: process.env.POSTGRES_USERNAME,
+        password: process.env.POSTGRES_PASSWORD,
+        host: process.env.POSTGRES_HOST,
+        aws_region: process.env.AWS_REGION,
+        aws_profile: process.env.AWS_PROFILE,
+        aws_media_bucket: process.env.AWS_MEDIA_BUCKET,
     },
-    "jwt": {
-        "secret": " ",
+    jwt: {
+        secret: process.env.JWT_SECRET,
     },
-    "prod": {
-        "username": "",
-        "password": "",
-        "database": "udagram_prod",
-        "host": "",
-        "dialect": "postgres",
+    prod: {
+        username: "",
+        password: "",
+        database: "udagram_prod",
+        host: "",
+        dialect: "postgres",
     },
 };
